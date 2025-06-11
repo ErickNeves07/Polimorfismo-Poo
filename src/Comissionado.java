@@ -19,4 +19,8 @@ public class Comissionado extends Vendedor{
     public String toString() {
         return super.toString()+"\nPercentual de comissão ➜ "+percComissao;
     }
-}
+
+    //Outros
+    public double calcularSalario(){
+        return getSalarioBase()+(getValorVendas()*(1+(percComissao/100)));
+}}

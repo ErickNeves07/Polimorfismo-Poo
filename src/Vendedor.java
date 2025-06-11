@@ -40,6 +40,20 @@ public class Vendedor {
     }
 
     public String toString() {
-        return "CPF ➜ "+this.cpf+"\nNome ➜ "+this.nome+"\nValor de vendas ➜ "+this.valorVendas+"\nSalário base ➜"+this.salarioBase;
+        return "CPF ➜ "+this.cpf+"\nNome ➜ "+this.nome+"\nValor de vendas ➜ "+this.valorVendas+"\nSalário base ➜ "+this.salarioBase;
+    }
+
+    //Outros métodos
+    public double calcularSalario(){
+        return salarioBase+valorVendas;
+    }
+    public double calcularSalario(double bonificacao){
+        return (salarioBase+valorVendas)+bonificacao;
+    }
+
+    public boolean aumentarSalarioBase(double percentual){
+        if (percentual<=0) return false;
+        salarioBase += salarioBase*(percentual/100);
+        return true;
     }
 }
